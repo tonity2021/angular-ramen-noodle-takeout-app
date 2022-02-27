@@ -1,1 +1,20 @@
-<p>orders works!</p>
+<!-- <div class="col-md-6 user-container"> -->
+    <h2 class="text-center">Place Order</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="orderSize">Order Size:</label>
+        <input type="text" formControlName="size" placeholder="size" name="size" class="form-control"
+               id="size">
+      </div>
+      <br/>
+  
+      <div class="form-group">
+        <label for="specialRequest">Special Request:</label>
+        <input type="special request" formControlName="special request" placeholder="special request" name="special request" class="form-control"
+               id="special request">
+      </div>
+  
+      <br/>
+      <button class="btn btn-success">Add</button>
+    </form>
+

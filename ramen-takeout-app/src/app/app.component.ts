@@ -1,11 +1,4 @@
 // import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
-// export class AppComponent {
 //   title = 'ramen-takeout-app';
 // }
 
@@ -13,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from './order.service';
 import { Order } from './Order';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -20,29 +14,47 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnInit {
-  title = 'ramen-takeout-app';
-  orders: Order[];
+  public orders: Order[];
+  // title = 'ramen-takeout-app';
+  // orders: Order[];
 
-  constructor(private router: Router, private orderService: OrderService) {}
-  getOrders() {
-    this.orderService.getOrders().subscribe((data) => {
-      this.orders = data;
-    });
-  }
-
-  addOrder(): void {
-    this.router.navigate(['add-order']).then((e) => {
-      if (e) {
-        console.log('Navigation is successful!');
-      } else {
-        console.log('Navigation has failed!');
-      }
-    });
-  }
+  constructor( private orderService: OrderService) {}
 
   ngOnInit(): void {
-    this.router.events.subscribe((value) => {
-      this.getOrders();
-    });
+    this.getOrders();
+      
   }
+public getOrders(): void {
+  this.orderService.getOrders().subscribe(
+    (response: Order[]) => {
+    this.orders = response;
+},
+    (error: HttpErrorResponse) => {
+    alert(error.message);
+    }
+  );
+}
+
+
+  // getOrders() {
+  //   this.orderService.getOrders().subscribe((data) => {
+  //     this.orders = data;
+  //   });
+  // }
+
+  // addOrder(): void {
+  //   this.router.navigate(['add-order']).then((e) => {
+  //     if (e) {
+  //       console.log('Navigation is successful!');
+  //     } else {
+  //       console.log('Navigation has failed!');
+  //     }
+  //   });
+  // }
+
+  // ngOnInit(): void {
+  //   this.router.events.subscribe((value) => {
+  //     this.getOrders();
+  //   });
+  // }
 }

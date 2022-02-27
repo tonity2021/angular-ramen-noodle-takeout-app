@@ -1,18 +1,23 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Order } from './Order';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class OrderService {
-    private apiServerUrl = '';
+  private apiServerUrl = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  
-  public getOrders(): Observable<Order[]> {
-      return this.http.get<Order[]>(`${this.apiServerUrl}/order/all`)
+  public addOrders(order: Order): Observable<Order> {
+    return this.http.post<Order>(`${this.apiServerUrl}/order/add`, order);
+  }
+  //tell the client where to make the request and the type of req to make
+  //get request
+  public getOrders(): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/order/all`);
   }
 }

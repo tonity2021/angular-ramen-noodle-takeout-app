@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { OrdersComponent } from './orders/orders.component';
 import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

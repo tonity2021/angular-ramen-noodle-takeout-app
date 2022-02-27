@@ -4,6 +4,7 @@
   <table class="table" style="width: 50%">
     <tr>
       <div class="col-6" style="border: 2px solid black">
+      <div align='center'><h4>Start Your Order:</h4></div>
       <th>Order Size</th>
       <th>Special Request</th>
       <th>Favorite Description</th>
@@ -13,7 +14,7 @@
     </tr>
     <tr *ngFor="let order of orders">
       <td>
-        {{ order.orderSize}}
+        {{order.orderSize}}
       </td>
       <td>
         {{order.specialRequest}}
@@ -32,6 +33,6 @@
 </div>
 <div>
   <p>
-    <button (click)="getOrders"> Start an Order </button>
+    <button (click)="getOrders"> My Orders </button>
   </p>
 </div>

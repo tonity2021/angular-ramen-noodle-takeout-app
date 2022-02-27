@@ -16,7 +16,8 @@ export class OrdersComponent implements OnInit {
   }
 
   addForm: FormGroup;
-
+  //add additional properties below
+  
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [],
@@ -27,9 +28,9 @@ export class OrdersComponent implements OnInit {
   }
 
   onSubmit() {
-    this.orderService.addOrder(this.addForm.value)
+    this.orderService.createOrder(this.addForm.value)
       .subscribe(data => {
-        this.router.navigate(['list-books']);
+        this.router.navigate(['list-orders']);
       });
   }
 

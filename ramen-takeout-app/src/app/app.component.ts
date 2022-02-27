@@ -15,7 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   public orders: Order[];
-  // title = 'ramen-takeout-app';
+  title = 'ramen-takeout-app';
   // orders: Order[];
 
   constructor( private orderService: OrderService) {

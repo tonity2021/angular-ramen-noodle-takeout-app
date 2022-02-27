@@ -1,6 +1,6 @@
 <div class="col-md-6 user-container">
     <h2 class="text-center">Place Order</h2>
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]= "addForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="orderSize">Order Size:</label>
         <input type="text" formControlName="size" placeholder="size" name="size" class="form-control"
@@ -15,6 +15,7 @@
       </div>
   
       <br/>
-      <button class="btn btn-success">Add</button>
+     <!-- need button below -->
+      <button class="btn btn-success">Start an Order</button>
     </form>
 

@@ -20,4 +20,10 @@ export class OrderService {
   public getOrders(): Observable<Order[]> {
     return this.http.get<any>(`${this.apiServerUrl}/order/all`);
   }
+  public updateOrder(order: Order): Observable<Order> {
+    return this.http.put<Order>(`${this.apiServerUrl}/order/update/`, order);
+  }
+  public deleteOrder(orderId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/order/delete/${orderId}`);
+  }
 }

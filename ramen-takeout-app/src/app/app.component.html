@@ -3,11 +3,13 @@
 <div>
   <table class="table" style="width: 50%">
     <tr>
+      <div class="col-6" style="border: 2px solid black">
       <th>Order Size</th>
       <th>Special Request</th>
       <th>Favorite Description</th>
       <th>Name</th>
       <th></th>
+      </div>
     </tr>
     <tr *ngFor="let order of orders">
       <td>
@@ -30,6 +32,6 @@
 </div>
 <div>
   <p>
-    <button > Start an Order </button>
+    <button (click)="getOrders"> Start an Order </button>
   </p>
 </div>

@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
       
   }
 public getOrders(): void {
-  this.orderService.getOrders().subscribe(
+  this.orderService.getAllOrders().subscribe(
     (response: Order[]) => {
     this.orders = response;
 },

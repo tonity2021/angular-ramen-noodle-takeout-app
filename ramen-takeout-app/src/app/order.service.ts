@@ -11,15 +11,18 @@ export class OrderService {
   private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
-
-  public addOrder(order: Order): Observable<Order> {
+//check all requests
+  //below: tells the client where to make the request and the type of req to make get request
+  public createOrder(order: Order): Observable<Order> {
     return this.http.post<Order>(`${this.apiServerUrl}/order/add`, order);
   }
-  //tell the client where to make the request and the type of req to make
-  //get request
-  public getOrders(): Observable<Order[]> {
-    return this.http.get<any>(`${this.apiServerUrl}/order/all`);
+  // public getOrders(orderId: number): Observable<void> {
+  //   return this.http.delete<void>(`${this.apiServerUrl}/order/delete/${orderId}`);
+  // }
+  public getAllOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.apiServerUrl}/order/all`);
   }
+  //check this below
   public updateOrder(order: Order): Observable<Order> {
     return this.http.put<Order>(`${this.apiServerUrl}/order/update/`, order);
   }

@@ -2,20 +2,20 @@
     <h2 class="text-center">Place Order</h2>
     <form [formGroup]= "addForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="orderSize">Order Size:</label>
+        <label for="size">size:</label>
         <input type="text" formControlName="size" placeholder="size" name="size" class="form-control"
                id="size">
       </div>
       <br/>
   
       <div class="form-group">
-        <label for="specialRequest">Special Request:</label>
-        <input type="special request" formControlName="special request" placeholder="special request" name="special request" class="form-control"
-               id="special request">
+        <label for="request">request:</label>
+        <input type="text" formControlName="request" placeholder="request" name="request" class="form-control"
+               id="request">
       </div>
   
       <br/>
-     <!-- need button below -->
+   
       <button class="btn btn-success">Start an Order</button>
     </form>
 

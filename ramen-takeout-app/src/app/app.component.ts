@@ -4,7 +4,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from './order.service';
-import { Order } from './Order';
+import { Order } from './order';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 

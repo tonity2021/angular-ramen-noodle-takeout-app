@@ -18,7 +18,9 @@ export class AppComponent implements OnInit {
   // title = 'ramen-takeout-app';
   // orders: Order[];
 
-  constructor( private orderService: OrderService) {}
+  constructor( private orderService: OrderService) {
+    this.orders = [];
+  }
 
   ngOnInit(): void {
     this.getOrders();

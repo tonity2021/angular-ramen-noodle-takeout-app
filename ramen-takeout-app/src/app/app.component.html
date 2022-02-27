@@ -1,8 +1,9 @@
 <!-- <div align='center'><h1>The Ramen Noodle Bowl</h1></div> -->
 
 <div>
+  <table class="table" style="width: 50%">
     <tr>
-      <th>Order_Size</th>
+      <th>order_Size</th>
       <th>specialRequest</th>
       <th>favoriteDescription</th>
       <th>name</th>
@@ -10,23 +11,23 @@
     </tr>
     <tr *ngFor="let order of orders">
       <td>
-        {order.}}
+        {{ order.orderSize}}
       </td>
       <td>
-        {{order.}}
+        {{order.specialRequest}}
       </td>
       <td>
-        {{order.}}
+        {{order.favoriteDescription}}
       </td>
       <td>
-        {{order.}}
+        {{order.name}}
       </td>
     </tr>
   </table>
 </div>
 <div>
   <p>
-    <button (click)="addOrder()"> Start an Order </button>
+    <!-- <button (click)="addOrder()"> Start an Order </button> -->
   </p>
 </div>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->

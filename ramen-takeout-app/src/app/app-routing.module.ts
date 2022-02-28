@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OrdersComponent } from './orders/orders.component';
+import { OrdersListComponent } from './orders-list/orders-list.component';
+import { OrderFormComponent } from './order-form/order-form.component';
+
 const routes: Routes = [
   
   // {path: 'list-orders', redirectTo: '/', pathMatch: 'full'},
-  {path: 'order', component: OrdersComponent},
+  {path: 'order', component: OrderFormComponent},
+  // {path: '', component: OrdersComponent},
+
 ];
 
-
-//check order path above
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

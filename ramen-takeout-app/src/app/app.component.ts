@@ -1,7 +1,3 @@
-// import { Component } from '@angular/core';
-//   title = 'ramen-takeout-app';
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from './order.service';
 import { Order } from './order';
@@ -21,22 +17,33 @@ export class AppComponent implements OnInit {
   constructor( private orderService: OrderService) {
     this.orders = [];
   }
+ 
 
   ngOnInit(): void {
     this.getOrders();
       
   }
+
+
 public getOrders(): void {
-  this.orderService.getAllOrders().subscribe(
-    (response: Order[]) => {
-    this.orders = response;
-},
-    (error: HttpErrorResponse) => {
-    alert(error.message);
-    }
-  );
+  this.orderService.getAllOrders()
 }
 
+
+
+
+//Add this back in below if needed
+
+// public getOrders(): void {
+//   this.orderService.getAllOrders().subscribe(
+//     (response: Order[]) => {
+//     this.orders = response;
+// },
+//     (error: HttpErrorResponse) => {
+//     alert(error.message);
+//     }
+//   );
+// }
 
   // getOrders() {
   //   this.orderService.getOrders().subscribe((data) => {

@@ -1,0 +1,99 @@
+<!-- needs to be routed to page 2 -->
+<div class="container">
+    <div [hidden]="submitted">
+      <h1>Start an Order</h1>
+      <form (ngSubmit)="onSubmit()" #menuForm="ngForm">
+        <div class="form-group">
+          <label for="name">Ramen Bowl</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="model.name"
+            name="name"
+            #name="ngModel"
+          />
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Name of noodle bowl is required
+          </div>
+        </div>
+ <!-- Size -->
+        <div class="form-group">
+          <label for="specialRequest">Select a Special Request</label>
+          <input
+            type="text"
+            class="form-control"
+            id="specialRequest"
+            [(ngModel)]="model.specialRequest"
+            name="specialRequest"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="orderSize">Choose a Size</label>
+          <select
+            class="form-control"
+            id="orderSize"
+            required
+            [(ngModel)]="model.orderSize"
+            name="orderSize"
+            #orderSize="ngModel"
+          >
+            <option *ngFor="let entry of entries" [value]="entry">{{ entry }}</option>
+          </select>
+          <div [hidden]="orderSize.valid || orderSize.pristine" class="alert alert-danger">
+            Size is required
+          </div>
+        </div>
+  
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!menuForm.form.valid"
+        >
+          Submit
+        </button>
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="newMenu(); menuForm.reset()"
+        ></button>
+  <!-- added menu reset below -->
+        &nbsp;&nbsp;
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="newMenu(); menuForm.reset()"
+        ></button>
+  
+        <div>
+          <hr />
+        </div>
+      </form>
+    </div>
+  
+    <div [hidden]="!submitted">
+      <h2>You submitted the following:</h2>
+      <div class="row">
+        <div class="col-xs-3">Ramen Bowl</div>
+        <div class="col-xs-9">{{ model.name }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">specialRequest</div>
+        <div class="col-xs-9">{{ model.specialRequest }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">orderSize</div>
+        <div class="col-xs-9">{{ model.orderSize }}</div>
+      </div>
+      <br />
+      <button type="button" class="btn btn-primary" (click)="submitted = false">
+        Edit
+      </button>
+    </div>
+  </div>
+  
+  <div>
+    <form></form>
+  </div>

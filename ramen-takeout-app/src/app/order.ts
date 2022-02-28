@@ -1,9 +1,11 @@
 //order attributes
 export interface Order {
-    id: number;
-    orderSize: string;
-    specialRequest: string;
-    foodDescription: boolean;
-    addToFavorites: string;
-    name: string
-  }
+  id: number;
+  orderSize: string;
+  specialRequest: string;
+  foodDescription: string;
+  addToFavorites: boolean;
+  name: string
+}
+
+

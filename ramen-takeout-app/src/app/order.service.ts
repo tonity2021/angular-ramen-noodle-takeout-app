@@ -12,9 +12,9 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
 //check all requests
-  //below: tells the client where to make the request and the type of req to make get request
+  //below: tells the client where to make the request and the type of req to make 
   public createOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(`${this.apiServerUrl}/order/add`, order);
+    return this.http.post<Order>(`${this.apiServerUrl}/order/`, order);
   }
   // public getOrders(orderId: number): Observable<void> {
   //   return this.http.delete<void>(`${this.apiServerUrl}/order/delete/${orderId}`);

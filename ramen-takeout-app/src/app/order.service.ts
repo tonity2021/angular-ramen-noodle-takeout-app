@@ -2,31 +2,44 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from './order';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrderService {
-  private apiServerUrl = environment.apiBaseUrl;
-
   constructor(private http: HttpClient) {}
-//check all requests
-  //below: tells the client where to make the request and the type of req to make 
-  public createOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(`${this.apiServerUrl}/order/`, order);
+
+  //create a new customer order
+  createOrder(
+    name: string,
+    orderSize: string,
+    specialRequest: string,
+    foodDescription: string,
+    addToFavorites: boolean
+  ) {
+    return this.http.post('/api/order/', {
+      name: name,
+      orderSize: orderSize,
+      specialRequest: specialRequest,
+      foodDescription: foodDescription,
+      addToFavorites: addToFavorites,
+    });
   }
-  // public getOrders(orderId: number): Observable<void> {
-  //   return this.http.delete<void>(`${this.apiServerUrl}/order/delete/${orderId}`);
-  // }
-  public getAllOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(`${this.apiServerUrl}/order/all`);
+  //gets all customer orders in the system
+  getAllOrders() {
+    return this.http.get('/api/orders/');
   }
-  //check this below
-  public updateOrder(order: Order): Observable<Order> {
-    return this.http.put<Order>(`${this.apiServerUrl}/order/update/`, order);
+  //get an order by Id
+  getOrder(orderId: number) {
+    return this.http.get('/api/order/ + orderId');
   }
-  public deleteOrder(orderId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/order/delete/${orderId}`);
+  //update a customer order
+//   updateOrder(orderId: number) {
+//     return this.http.put('/api/order/ + orderId');
+//   }
+  //delete a customer order
+  deleteOrder(orderId: number) {
+    return this.http.delete('/api/order/ + orderId');
+    // /order/{orderId}"
   }
 }

@@ -1,3 +1,4 @@
+
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
@@ -73,7 +74,8 @@
               "browserTarget": "ramen-takeout-app:build:production"
             },
             "development": {
-              "browserTarget": "ramen-takeout-app:build:development"
+              "browserTarget": "ramen-takeout-app:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

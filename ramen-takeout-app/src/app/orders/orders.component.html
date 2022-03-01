@@ -1,13 +1,91 @@
-<div class="col-md-6 user-container">
+<div id="background-col" >
+<div class="card" style="width: 20rem; text-align:center;display:inline-block;">
+  <img class="card-img-top" src="" alt="Card image cap" height="200" width="200" style="border-radius:.60rem;">
+  <div class="card-block">
+    <h4 class="card-title">Name</h4>
+    <p class="card-text">Some quick example text to build</p>
+  </div>
+</div>
+
+<div class="card" style="width: 20rem; text-align:center;display:inline-block;">
+  <img class="card-img-top" src="" alt="Card image cap" height="200" width="200" style="border-radius:.60rem;">
+  <div class="card-block">
+    <h4 class="card-title">Name</h4>
+    <p class="card-text">Some quick example text to build</p>
+  </div>
+</div>
+
+<div class="card" style="width: 20rem; text-align:center;display:inline-block;">
+  <img class="card-img-top" src="" alt="Card image cap" height="200" width="200" style="border-radius:.60rem;">
+  <div class="card-block">
+    <h4 class="card-title">Name</h4>
+    <p class="card-text">Some quick example text to build</p>
+  </div>
+</div>
+<div class="card" style="width: 20rem; text-align:center;display:inline-block;">
+  <img class="card-img-top" src="https://data.thefeedfeed.com/static/2018/10/14/15395678465bc3f0e6de460.jpg" alt="Card image cap" height="200" width="200" style="border-radius:.60rem;">
+  <div class="card-block">
+    <h4 class="card-title">Firestorm</h4>
+    <p class="card-text">Spicy Ramen Noodle Bowl</p>
+  </div>
+</div>
+<div class="card" style="width: 20rem; text-align:center;display:inline-block;">
+  <img class="card-img-top" src="https://cookingwithawallflower.com/wp-content/uploads/2020/04/Spicy-Miso-Mushroom-Ramen-1.jpg" alt="Card image cap" height="200" width="200" style="border-radius:.60rem;">
+  <div class="card-block">
+    <h4 class="card-title">Spice Me Up</h4>
+    <p class="card-text">Spicy Miso Mushroom Ramen Noodle Bowl</p>
+  </div>
+</div>
+<div class="card" style="width: 20rem; text-align:center;display:inline-block;">
+  <img class="card-img-top" src="https://steamykitchen.com/wp-content/uploads/2011/04/miso-ramen-recipe-20971.jpg" alt="Card image cap" height="200" width="200" style="border-radius:.60rem;">
+  <div class="card-block">
+    <h4 class="card-title">Mi and My Bowl</h4>
+    <p class="card-text">Miso Ramen Noodle Bowl</p>
+  </div>
+</div>
+</div>
+
+<ng-container *ngFor="let order of name"></ng-container>
+<h1>Start an Order</h1>
+
+<div class="col-6" style="border: 2px solid black">
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Noodle Bowls</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter noodle bowl">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Size</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="i.e. small">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Special Request</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="i.e. extra noodles">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Add to Favorites</label>
+  </div>
+  <div class="btn-toolbar">
+  <button (click)="createOrder() "type="submit" class="btn btn-primary">Place Order</button>
+  <button (click)="getAllOrders() "type="submit" class="btn btn-primary">Checkout</button>
+  <button (click)="deleteOrder(orderId) "type="submit" class="btn btn-primary">Delete Order</button>
+</div>
+
+
+</form>
+
+ <!-- <div class="col-md-6 user-container">
     <h2 class="text-center">Place Order</h2>
-    <form [formGroup]= "addForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]= "" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="size">size:</label>
         <input type="text" formControlName="size" placeholder="size" name="size" class="form-control"
                id="size">
       </div>
-      <br/>
-  
+      <br/> 
+ 
       <div class="form-group">
         <label for="request">request:</label>
         <input type="text" formControlName="request" placeholder="request" name="request" class="form-control"
@@ -17,5 +95,4 @@
       <br/>
    
       <button class="btn btn-success">Start an Order</button>
-    </form>
-
+    </form> -->

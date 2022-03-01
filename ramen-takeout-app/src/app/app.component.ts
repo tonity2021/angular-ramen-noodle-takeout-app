@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from './order';
-import { OrderFormComponent } from './order-form/order-form.component';
+import { OrdersComponent } from './orders/orders.component';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { OrderService } from './order.service';
@@ -10,13 +9,8 @@ import { OrderService } from './order.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {
-
+export class AppComponent {
   title = 'ramen-takeout-app';
 
-  constructor( private orderService: OrderService) {
-
-  }
- 
-
+  constructor(private orderService: OrderService) {}
 }

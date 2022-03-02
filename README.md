@@ -1,5 +1,4 @@
-# angular-ramen-noodle-takeout-app
-# ramen-noodle-takeout-API
+# angular-ramen-noodle-takeout-app API
 ![cute-ramen-noodle-cartoon-icon-illustration_138676-2580](https://user-images.githubusercontent.com/94870846/156315252-5612cb44-12b4-446e-a631-25e8a3eb9a04.jpg)
 ## Project Concept:
 

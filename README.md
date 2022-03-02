@@ -9,8 +9,6 @@ Ultimately I was able to achieve this project through a variety of outside tools
 ## Entity Relationship Diagram (ERD)
 ![image](https://user-images.githubusercontent.com/94870846/156322260-b91dd284-74a0-4853-9a05-8da584bab237.png)
 
-## Dependencies
-
 ## Technologies and Tools Used
 
 ![image](https://user-images.githubusercontent.com/94870846/152493640-cd82f4c2-7a41-4007-9799-7237cdcf60cb.png)

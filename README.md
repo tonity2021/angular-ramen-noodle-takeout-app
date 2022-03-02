@@ -8,7 +8,7 @@ This app represents a fast food online reservation system which allows a user to
 Ultimately I was able to achieve this project through a variety of outside tools: using Word document to track my goals and progress, creating an ERD, and making multiple commits via Git Bash to keep track of recent changes to my project.
 
 ## Entity Relationship Diagram (ERD)
-![image](https://user-images.githubusercontent.com/94870846/156322030-798d03f9-bd95-4679-9bcc-a430dc869d89.png)
+![image](https://user-images.githubusercontent.com/94870846/156322260-b91dd284-74a0-4853-9a05-8da584bab237.png)
 
 ## Dependencies
 

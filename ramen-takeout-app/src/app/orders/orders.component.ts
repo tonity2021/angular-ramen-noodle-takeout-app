@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { OrderService } from '../order.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-orders',
@@ -10,47 +8,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
-  orderId: number = 1;
-  orderSize: any;
-  specialRequest?: any;
-  foodDescription: any;
-  addToFavorites?: any;
+  projectForm: any;
+  orderId: number = 0;
+  order: any;
   name: any;
-  constructor(private service: OrderService, private route: ActivatedRoute) {}
+  submitted = false;
 
-  ngOnInit(): void {
-    this.route.parent?.params.subscribe((params) => {
-      this.orderId = params['orderId'];
-    });
-
-    this.getAllOrders();
+  showFormControls(form: any) {
+    return form && form.controls.name && form.controls.name.value;
   }
 
-  deleteOrder(orderId: number) {
-    this.service.deleteOrder(this.orderId).subscribe((response: any) => {});
-  }
-
-  getAllOrders() {
-    this.service.getAllOrders().subscribe((response) => {
-      this.foodDescription = response;
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+    this.projectForm = this.formBuilder.group({
+      id: [''],
+      name: [''],
+      specialRequest: [''],
     });
   }
-  createOrder() {
-    this.service
-      .createOrder(
-        this.orderSize,
-        this.specialRequest,
-        this.foodDescription,
-        this.addToFavorites,
-        this.name
-      )
-      .subscribe({
-        next: (response: any) => {
-          this.name();
-        },
-      });
+
+  ngOnInit(): void {}
+
+  onSubmit(): void {
+    console.warn('Your order has been submitted', this.projectForm.value);
+    this.http.post(`/api/order/`, this.projectForm.value).subscribe((data) => {
+      return data;
+    });
+    this.projectForm.reset();
+    this.submitted = true;
   }
-
-
 }
-

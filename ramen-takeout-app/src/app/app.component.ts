@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrdersComponent } from './orders/orders.component';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { OrderService } from './order.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { OrderService } from './order.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'ramen-takeout-app';
+  title = 'ramen-noodle-takeout-app';
 
-  constructor(private orderService: OrderService) {}
+  constructor() {}
 }

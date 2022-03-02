@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OrdersListComponent } from './orders-list/orders-list.component';
 import { OrdersComponent } from './orders/orders.component';
-//GOOD
+import { CancelComponent } from './cancel/cancel.component';
+
 const routes: Routes = [
-  
-  {path: '', component: OrdersComponent},
-
-
-
+  { path: '', component: OrdersComponent },
+  { path: 'cancel', component: CancelComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
